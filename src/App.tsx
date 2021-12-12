@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Game from './pages/Game';
+import Start from './pages/Start';
+import Finished from './pages/Finished';
+
+import useTickTackToe from './hooks/useTickTackToe';
+
+// Base Tutorial: https://betterprogramming.pub/lets-build-a-tic-tac-toe-game-using-react-with-typescript-and-hooks-321f78d8d1e0
+
+const App = () => {
+  
+  const game = useTickTackToe();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      { game.status === 'new' && <Start handleStart={ game.handleStart } /> }
+      { game.status === 'finished' && <Finished name={ game.winner } handleRestart={ game.handleRestart } /> }
+      { game.status === 'started' && <Game board={ game.board } handleClick={ game.handleClick } /> }
     </div>
   );
 }
