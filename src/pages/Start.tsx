@@ -19,6 +19,22 @@ interface Props {
 // Create the start function that accepts a Props attribute.
 const Start = (props: Props) => {
 
+
+    const styles = {
+
+        main: {
+            margin: 'auto auto',
+            display: 'flex',
+            justifyContent: 'center',
+            background: 'blue',
+        },
+
+        header: {
+            background: 'red',
+            // display:'block',
+            //  width: '100%'
+        }
+    };
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,8 +72,8 @@ const Start = (props: Props) => {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     return (
-        <div>
-            <h1>Tic Tac Toe</h1>
+        <div style={styles.main}>
+            <div style={styles.header}><h1>Tic Tac Toe</h1></div>
             <form onSubmit={handleSubmit}>
 
                 <div>

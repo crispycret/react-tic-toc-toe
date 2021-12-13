@@ -12,9 +12,17 @@ const Square = (props: Props) => {
 
     const styles = {
         button: {
-            width: '25vw',
-            height: '25vw',
-            fontSize: '46px',
+            // width: '15vw',
+            // height: '15vw',
+            // fontSize: '36px',
+            // marginLeft: '5vw',
+            // marginTop: '5vw',
+
+            width: '85%',
+            height: '85%',
+            fontSize: '36px',
+            marginLeft: '7%',
+            marginTop: '5%',
         },
     };
 
